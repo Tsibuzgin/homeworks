@@ -1,30 +1,41 @@
 "use strict";
 
-let age = prompt('Ваш возраст?');
-let city = prompt('В каком городе вы живёте?');
-let sport = prompt('Ваш любимый вид спорта?');
-if ((age!=='') && (city!=='') && (sport!==''))
-{
-    let A='Ваш возраст ' + age;
-    let U;
-    switch(city) {
-        case 'Киев': U='Вы живёте в столице Украины'
-            break
-        case 'Москва': U='Вы живёте в столице РФ'
-            break
-        case 'Минск': U='Вы живёте в столице Белоруссии'
-            break
-        default: U='Вы живёте в городе ' + city
-    }
-    switch(sport) {
-        case 'Шахматы': alert(U +'\n'+ A+'\n'+'Круто! Хочешь стать Алёхиным!')
-            break
-        case 'Бокс': alert(U +'\n'+ A+'\n'+'Круто! Хочешь стать Кличко!')
-            break
-        case 'Футбол': alert(U +'\n'+ A+'\n'+'Круто! Хочешь стать Шевченко!')
-            break
-    }
-}
-else if (age==='') alert('Жаль,что вы не захотели вводить возраст.')
-else if (city==='') alert('Жаль,что вы не захотели вводить город.')
-else if (sport==='') alert('Жаль,что вы не захотели вводить вид спорта')
+let year = prompt('Твой год рождения?');
+if (year !== null) {
+    let year_n = +year;
+    let age = 2022-year_n;
+    let city = prompt('В каком городе ты живёшь?');
+    if (city !== null) {
+        let sport = prompt('Твой любимый вид спорта?');
+        if (sport !== null) {
+            let A='Твой возраст ' + age;
+            let U;
+            switch(city) {
+                case 'Киев':
+                    U='Ты живёшь в столице Украины.';
+                    break;
+                case 'Москва':
+                    U='Ты живёшь в столице РФ.';
+                    break;
+                case 'Минск':
+                    U='Ты живёшь в столице Белоруссии.';
+                    break;
+                default: U='Ты живёшь в городе ' + city;
+            }
+            switch(sport) {
+                case 'Шахматы':
+                    alert(A +'\n'+ U+'\n'+'Круто! Хочешь стать Алёхиным!');
+                    break;
+                case 'Бокс':
+                    alert(A +'\n'+ U+'\n'+'Круто! Хочешь стать Кличко!');
+                    break;
+                case 'Футбол':
+                    alert(A +'\n'+ U+'\n'+'Круто! Хочешь стать Шевченко!');
+                    break;
+                default:
+                    alert(A +'\n'+ U);
+                    break;
+            }
+        } else {alert('Жаль, что Вы не захотели вводить свой вид спорта.');}
+    } else {alert('Жаль, что Вы не захотели вводить свой город.');}
+} else {alert('Жаль, что Вы не захотели вводить свой год рождения.');}
