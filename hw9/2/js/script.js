@@ -1,3 +1,4 @@
+console.log("Hi!");
 // Этот же скрипт с использованием switch
 let numOrStr = prompt('input number or string');
 switch(numOrStr) {
