@@ -2,11 +2,12 @@ let num = +prompt("Number?");
 let exp = +prompt("Exponent?");
 function f(a, b) {
     let d = 1;
-    if (typeof a === NaN || typeof b === NaN)
+    if (isNaN(a) || isNaN(b))
     d = 'some error';
     else 
     d = Math.pow(num, exp);
     return d;
 }
 
-console.log(f(num, exp));
+let ans = (f(num, exp));
+alert(ans);
