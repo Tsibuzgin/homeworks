@@ -1,12 +1,12 @@
 'use strict';
 function makeRand(num) {
-        var usedNumbers = [num--];
+        let usedNumbers = [num--];
         !function f() {
-            var i = Math.round(Math.random() * usedNumbers.length);
+            let i = Math.round(Math.random() * usedNumbers.length);
             usedNumbers.splice(i,0,num--);
             num && f();
         }();
         return usedNumbers;
     }
-    var arr = makeRand(100);
+    let arr = makeRand(100);
     console.log(arr);
