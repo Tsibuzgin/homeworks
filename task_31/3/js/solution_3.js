@@ -1,5 +1,8 @@
-'use strict';
+//3
 let bodyEl = document.body;
+let bodyChilds = bodyEl.childNodes;
 let list_arr = bodyEl.childNodes[1].children;
 let Arr = Array.from(list_arr);
-console.log(Arr);
+for(let element of Arr) {
+    console.log(element.innerText);
+}
