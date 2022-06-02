@@ -7,9 +7,9 @@ function createTable() {
         p.innerText = '';
         for (let j = 10*(i-1) + 1; j < 10*(i-1) + 11; j++) {
             if (i === 1) {
-                pre.innerText = pre.innerText  + j.toString() + '  ';
+                pre.innerText +=  j.toString() + '  ';
             } else {
-                p.innerText = p.innerText + ' ' + j.toString();
+                p.innerText += ' ' + j.toString();
             }
         }
         document.body.append(pre);
