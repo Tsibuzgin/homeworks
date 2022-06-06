@@ -1,11 +1,12 @@
 'use strict';
 //1
 const a = document.querySelector("ul");
+let attributes = a.attributes;
+let array_attr = Array.from(attributes);
 let arr = [];
-arr[0] = a.getAttribute('id');
-arr[1] = a.getAttribute('class');
-arr[2] = a.getAttribute('data-custom');
-arr[3] = a.getAttribute('data-dog-tail');
+for (let element of array_attr) {
+    arr[array_attr.indexOf(element)] = element.nodeValue;
+}
 console.log(arr);
 
 //2
@@ -14,7 +15,7 @@ arrAtrName[0] = a.attributes[0].name;
 arrAtrName[1] = a.attributes[1].name;
 arrAtrName[2] = a.attributes[2].name;
 arrAtrName[3] = a.attributes[3].name;
-console.log(arrAtrName);
+// console.log(arrAtrName);
 
 //3
 let bodyEl = document.body;
