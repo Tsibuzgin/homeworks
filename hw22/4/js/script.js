@@ -1,13 +1,17 @@
 'use strict';
-//findIndex
-Array.prototype.myFindIndex = function(callback,context) {
-    context = context || window
-    var len = this.length
-    var i = 0
-    while (i < len) {
-      if(callback.call(context,this[i],i,this))
-        return i
-      i++
+function my_findIndex(arr, func) {
+    let c;
+    for (let i = 0; i < arr.length; i++) {
+        if (func(arr[i])) {
+            c = i;
+            break;
+        } else {
+            c = -1;
+        }
     }
-    return -1
-  }
+    return c;
+}
+
+let a = [1, 2, 3, 4, 5];
+let b = my_findIndex(a, x => x < 0);
+console.log(b);

@@ -1,21 +1,27 @@
 'use strict';
-//lastIndexOf
-let arr = [2, 5, 9, 2];
-Array.prototype.myLastIndexOf = function(search,fromIndex){
-    fromIndex = fromIndex ? typeof fromIndex === 'number' ? fromIndex 
-                : (fromIndex-=0) && fromIndex === fromIndex ? fromIndex 
-                : 0 
-                : 0
-    var index = -1
-    var i = fromIndex < 0 ? fromIndex + this.length > 0 ? fromIndex + this.length : 0 : fromIndex > this.length ? this.length : fromIndex
-    while (i > 0) {
-      if(search === this[i]){
-        index = i
-        break
-      }
-      i--
+function my_lastIndexOf(arr, search_elem, from_index) {
+    let index;
+    if (from_index >= 0) {
+        for (let i = from_index; i >=0 ; i--) {
+            if (search_elem === arr[i]) {
+                index = i;
+                break;
+            }
+        } 
+        return index;
+    } else {
+        for (let j = from_index + arr.length; j >= 0; j--) {
+            if (search_elem === arr[j]) {
+                index = j;
+                break;
+            }
+        } 
+        return index;
     }
-    return index
 }
 
-console.log(arr.lastIndexOf(2, -1));
+// let array = [0, 1, 2, 1, 0];
+// console.log(my_lastIndexOf(array, 2, array.length-1));
+
+// let array =  ["Orange", "Apple", "Mango", "Apple", "Banana", "Apple"];
+// console.log(my_lastIndexOf(array, "Apple", -2));
